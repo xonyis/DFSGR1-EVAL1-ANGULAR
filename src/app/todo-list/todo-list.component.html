@@ -1,0 +1,32 @@
+<div class="container-fluid d-flex justify-content-center flex-column align-content-center">
+  <div class="p-3 card col-3 m-auto d-flex flex-column mt-3">
+    <p class="fs-4">Ajouter une tache :</p>
+    <input type="text" [(ngModel)]="newTaskTitle" >
+    <button class="btn btn-primary mt-3" (click)="addTask()">Add Task</button>
+  </div>
+
+  <div class="card p-2 col-6 mt-5 m-auto">
+    <table class="text-center">
+      <thead>
+        <th class="col-7 d-flex justify-content-between ms-4  " scope="col"><span>Statut</span><span>Titre</span></th>
+        <th class="col-2" scope="col">Actions</th>
+      </thead>
+      <tbody>
+        @for (task of tasks; track $index; let taskIndex = $index) {
+          <div class="mb-3"></div>
+          <tr>
+            <td class="input-group  col-9">
+              <div class="input-group-text col-2">
+                <input class="form-check-input mt-0 m-auto mb-0" type="checkbox" [(ngModel)]="task.completed" (change)="save()">
+              </div>
+              <input type="text" [(ngModel)]="task.title" (blur)="save()" class="form-control" aria-label="Text input with checkbox">
+            </td>
+            <td><button class="btn btn-danger " (click)="deleteTask(task.id)">Delete</button></td>
+          </tr>
+
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,0 +1,14 @@
+nav ul {
+  list-style: none;
+
+}
+
+nav ul li a{
+  text-decoration: none;
+}
+.active {
+  font-weight: bold;
+}
+.navbar-brand {
+  font-weight: bold;
+}

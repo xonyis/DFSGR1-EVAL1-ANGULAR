@@ -1,0 +1,20 @@
+li {
+  list-style-type: none;
+}
+
+.title {
+  .inputTitle{
+    display: none;
+  }
+
+  &:hover{.inputTitle{
+    display: block;
+  }
+  p{
+    display: none;
+  }
+  }
+
+}
+
+
